@@ -3,235 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Naman Navneet — AI Engineer specialising in Generative AI, Agentic Systems, and LLM-powered products. Building production AI at ZS Associates.">
+<meta name="description" content="Naman Navneet — AI Engineer specialising in Generative AI, Agentic Systems, and LLM-powered products.">
 <meta property="og:title" content="Naman Navneet — AI Engineer">
-<meta property="og:description" content="I build Agentic AI systems and LLM products that ship to production.">
 <title>Naman Navneet — AI Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ── Reset & base ─────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --navy:    #0A0F1C;
-  --navy2:   #111827;
-  --navy3:   #1A2333;
-  --teal:    #00D4C8;
-  --teal2:   #00A89E;
-  --teal-dim:#00D4C820;
-  --teal-glow: 0 0 24px #00D4C850;
-  --white:   #E8EDF5;
-  --gray:    #94A3B8;
-  --gray2:   #4A5568;
-  --gold:    #F59E0B;
-  --red:     #EF4444;
-  --green:   #10B981;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body:    'Inter', sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
-  --max-w: 1080px;
-  --radius: 12px;
+  /* Light palette */
+  --bg:        #F7F8FC;
+  --bg2:       #EEF0F8;
+  --bg3:       #FFFFFF;
+  --surface:   #FFFFFF;
+  --border:    #E2E5F0;
+  --text:      #0F172A;
+  --text2:     #334155;
+  --text3:     #64748B;
+  --text4:     #94A3B8;
+
+  /* Accent colours */
+  --violet:    #6C3BEE;
+  --violet2:   #8B5CF6;
+  --violet-lt: #EDE9FE;
+  --teal:      #0EA5E9;
+  --teal-lt:   #E0F2FE;
+  --emerald:   #10B981;
+  --emerald-lt:#D1FAE5;
+  --coral:     #F43F5E;
+  --coral-lt:  #FFE4E6;
+  --amber:     #F59E0B;
+  --amber-lt:  #FEF3C7;
+  --indigo:    #4F46E5;
+
+  --font-d: 'Space Grotesk', sans-serif;
+  --font-b: 'Inter', sans-serif;
+  --font-m: 'JetBrains Mono', monospace;
+  --maxw: 1080px;
+  --r: 14px;
+  --r2: 20px;
+  --shadow: 0 1px 3px #0f172a0d, 0 4px 16px #0f172a0a;
+  --shadow2: 0 8px 32px #0f172a14, 0 2px 8px #0f172a08;
 }
+
 html { scroll-behavior: smooth; }
-body { background: var(--navy); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
-a { color: var(--teal); text-decoration: none; }
-a:hover { text-decoration: underline; }
-::selection { background: var(--teal); color: var(--navy); }
-
-/* ── Scrollbar ───────────────────────────────── */
+body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+a { color: var(--violet); text-decoration: none; }
+::selection { background: var(--violet-lt); color: var(--violet); }
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--navy2); }
-::-webkit-scrollbar-thumb { background: var(--teal2); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--violet2); border-radius: 2px; }
 
-/* ── Nav ──────────────────────────────────────── */
+/* ── NAV ─────────────────────────────── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 clamp(20px, 5vw, 60px);
-  height: 60px;
-  background: #0A0F1Ccc;
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid #ffffff08;
-  transition: background .3s;
+  padding: 0 clamp(20px,5vw,60px); height: 62px;
+  background: #ffffffd8; backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 12px #0f172a08;
 }
-.nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--teal); letter-spacing: -.02em; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-size: .85rem; font-weight: 500; color: var(--gray); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; text-decoration: none; }
-.nav-links a:hover, .nav-links a.active { color: var(--teal); }
-.nav-cta { font-family: var(--font-mono); font-size: .8rem; color: var(--teal); border: 1px solid var(--teal); padding: 6px 16px; border-radius: 4px; transition: all .2s; }
-.nav-cta:hover { background: var(--teal); color: var(--navy); text-decoration: none; }
-.nav-mobile-btn { display: none; background: none; border: none; color: var(--teal); cursor: pointer; font-size: 1.4rem; }
+.nav-logo { font-family: var(--font-d); font-weight: 700; font-size: 1.15rem; color: var(--violet); letter-spacing: -.02em; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: .82rem; font-weight: 500; color: var(--text3); letter-spacing: .05em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--violet); }
+.nav-cta { font-family: var(--font-m); font-size: .78rem; color: var(--bg3); background: var(--violet); padding: 7px 18px; border-radius: 8px; font-weight: 500; transition: all .2s; }
+.nav-cta:hover { background: var(--indigo); box-shadow: 0 4px 12px #6C3BEE40; }
+.nav-mobile-btn { display: none; background: none; border: none; color: var(--violet); cursor: pointer; font-size: 1.4rem; }
 
-/* ── Section wrapper ──────────────────────────── */
-section { max-width: var(--max-w); margin: 0 auto; padding: clamp(60px,10vh,120px) clamp(20px,5vw,40px); }
-.section-label { font-family: var(--font-mono); font-size: .75rem; color: var(--teal); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 12px; }
-.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 40px; }
+/* ── SECTIONS ────────────────────────── */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: clamp(70px,10vh,110px) clamp(20px,5vw,40px); }
+.s-eyebrow { font-family: var(--font-m); font-size: .72rem; color: var(--violet); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.s-eyebrow::before { content:''; flex-shrink:0; width:20px; height:2px; background:var(--violet); border-radius:2px; }
+.s-title { font-family: var(--font-d); font-size: clamp(1.8rem,4vw,2.5rem); font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 36px; }
 
-/* ── Hero ─────────────────────────────────────── */
-#hero { max-width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px clamp(20px,5vw,60px) 40px; position: relative; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 60% 40%, #00D4C810 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, #0A0F1C 0%, transparent 80%); pointer-events: none; }
-.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(#ffffff05 1px, transparent 1px), linear-gradient(90deg, #ffffff05 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%); }
-.hero-inner { position: relative; max-width: var(--max-w); width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.hero-tag { font-family: var(--font-mono); font-size: .8rem; color: var(--teal); letter-spacing: .12em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-.hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 #00D4C860} 50%{box-shadow:0 0 0 8px #00D4C800} }
-.hero-h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
-.hero-h1 span { color: var(--teal); }
-.hero-typewriter { font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.3rem); color: var(--gray); margin-bottom: 24px; min-height: 2em; }
-.cursor { display: inline-block; width: 2px; height: 1.1em; background: var(--teal); margin-left: 2px; vertical-align: text-bottom; animation: blink .75s step-end infinite; }
+/* ── HERO ────────────────────────────── */
+#hero {
+  max-width: 100%; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px clamp(20px,5vw,60px) 40px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #f0ebff 0%, #e8f4ff 35%, #f0fff8 65%, #fff5eb 100%);
+}
+.hero-blobs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .35; }
+.blob1 { width: 500px; height: 500px; background: var(--violet2); top: -100px; right: -100px; animation: drift1 12s ease-in-out infinite; }
+.blob2 { width: 400px; height: 400px; background: var(--teal); bottom: -80px; left: -60px; animation: drift2 15s ease-in-out infinite; }
+.blob3 { width: 300px; height: 300px; background: var(--emerald); top: 30%; right: 20%; animation: drift3 18s ease-in-out infinite; }
+@keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,40px)} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-30px)} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,20px)} }
+
+.hero-inner { position: relative; max-width: var(--maxw); width: 100%; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+.hero-tag { font-family: var(--font-m); font-size: .78rem; color: var(--violet); letter-spacing: .1em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.hero-dot { width: 8px; height: 8px; background: var(--emerald); border-radius: 50%; box-shadow: 0 0 0 3px #10b98130; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 3px #10b98130} 50%{box-shadow:0 0 0 8px #10b98108} }
+
+h1.hero-h1 { font-family: var(--font-d); font-size: clamp(2.4rem,5vw,3.8rem); font-weight: 700; line-height: 1.08; margin-bottom: 8px; color: var(--text); }
+h1.hero-h1 .gr { background: linear-gradient(135deg, var(--violet), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-typewriter { font-family: var(--font-d); font-size: clamp(.95rem,1.8vw,1.2rem); color: var(--text3); margin-bottom: 22px; min-height: 2em; font-weight: 400; }
+.cursor { display: inline-block; width: 2px; height: 1em; background: var(--violet); margin-left: 2px; vertical-align: text-bottom; animation: blink .7s step-end infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-.hero-desc { color: var(--gray); font-size: .95rem; line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
-.hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn-primary { font-family: var(--font-mono); font-size: .85rem; background: var(--teal); color: var(--navy); padding: 10px 24px; border-radius: 6px; font-weight: 600; transition: all .2s; }
-.btn-primary:hover { background: var(--teal2); text-decoration: none; box-shadow: var(--teal-glow); }
-.btn-ghost { font-family: var(--font-mono); font-size: .85rem; border: 1px solid var(--gray2); color: var(--gray); padding: 10px 24px; border-radius: 6px; transition: all .2s; }
-.btn-ghost:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
+.hero-desc { color: var(--text3); font-size: .95rem; line-height: 1.75; margin-bottom: 32px; max-width: 500px; }
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-primary { font-family: var(--font-m); font-size: .82rem; background: var(--violet); color: #fff; padding: 11px 26px; border-radius: 9px; font-weight: 500; transition: all .2s; box-shadow: 0 4px 14px #6C3BEE30; }
+.btn-primary:hover { background: var(--indigo); transform: translateY(-1px); box-shadow: 0 6px 20px #6C3BEE40; }
+.btn-ghost { font-family: var(--font-m); font-size: .82rem; border: 1.5px solid var(--border); color: var(--text3); padding: 11px 22px; border-radius: 9px; transition: all .2s; background: #fff; }
+.btn-ghost:hover { border-color: var(--violet); color: var(--violet); background: var(--violet-lt); }
 
-/* counters */
-.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.stat-card { background: var(--navy3); border: 1px solid #ffffff10; border-radius: var(--radius); padding: 20px; position: relative; overflow: hidden; transition: border-color .3s; }
-.stat-card:hover { border-color: var(--teal); }
-.stat-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--teal-dim), transparent); opacity: 0; transition: opacity .3s; }
-.stat-card:hover::before { opacity: 1; }
-.stat-num { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--teal); line-height: 1; }
-.stat-label { font-size: .8rem; color: var(--gray); margin-top: 6px; }
+/* hero stats */
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stat-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--r2);
+  padding: 22px; box-shadow: var(--shadow); transition: all .3s; position: relative; overflow: hidden;
+}
+.stat-card:nth-child(1) { border-top: 3px solid var(--violet); }
+.stat-card:nth-child(2) { border-top: 3px solid var(--teal); }
+.stat-card:nth-child(3) { border-top: 3px solid var(--emerald); }
+.stat-card:nth-child(4) { border-top: 3px solid var(--coral); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow2); }
+.stat-num { font-family: var(--font-d); font-size: clamp(1.9rem,3vw,2.5rem); font-weight: 700; color: var(--text); line-height: 1; }
+.stat-card:nth-child(1) .stat-num { color: var(--violet); }
+.stat-card:nth-child(2) .stat-num { color: var(--teal); }
+.stat-card:nth-child(3) .stat-num { color: var(--emerald); }
+.stat-card:nth-child(4) .stat-num { color: var(--coral); }
+.stat-label { font-size: .78rem; color: var(--text3); margin-top: 7px; line-height: 1.4; }
 
-/* tech pill strip */
-.tech-strip { max-width: 100%; overflow: hidden; padding: 20px 0; background: var(--navy2); border-top: 1px solid #ffffff08; border-bottom: 1px solid #ffffff08; margin-top: 40px; }
-.tech-strip-inner { display: flex; gap: 24px; animation: marquee 30s linear infinite; width: max-content; }
+/* strip */
+.tech-strip { overflow: hidden; padding: 16px 0; background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.strip-inner { display: flex; gap: 20px; animation: marquee 30s linear infinite; width: max-content; }
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-.tech-pill { font-family: var(--font-mono); font-size: .75rem; color: var(--gray); white-space: nowrap; padding: 4px 12px; border-radius: 20px; border: 1px solid #ffffff10; }
+.t-pill { font-family: var(--font-m); font-size: .72rem; color: var(--text3); white-space: nowrap; padding: 4px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg2); }
 
-/* ── Pipeline ──────────────────────────────────── */
-#pipeline { background: var(--navy2); max-width: 100%; border-top: 1px solid #ffffff08; border-bottom: 1px solid #ffffff08; }
-#pipeline .inner { max-width: var(--max-w); margin: 0 auto; padding: clamp(60px,10vh,100px) clamp(20px,5vw,40px); }
-.pipeline-desc { color: var(--gray); max-width: 580px; margin-bottom: 48px; }
-
-/* pipeline viz */
-.pipeline-container { background: var(--navy3); border: 1px solid #ffffff10; border-radius: 16px; padding: 32px; overflow-x: auto; }
-.pipeline-nodes { display: flex; align-items: center; gap: 0; min-width: 700px; }
+/* ── PIPELINE ────────────────────────── */
+#pipeline { background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.pipeline-desc { color: var(--text3); max-width: 580px; margin-bottom: 40px; font-size: .93rem; }
+.pipeline-container { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r2); padding: 30px; overflow-x: auto; box-shadow: var(--shadow); }
+.pipeline-nodes { display: flex; align-items: center; gap: 0; min-width: 720px; }
 .p-node { display: flex; flex-direction: column; align-items: center; position: relative; flex: 1; cursor: pointer; }
-.p-node-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--navy); border: 2px solid var(--gray2); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: all .3s; position: relative; z-index: 2; }
-.p-node:hover .p-node-circle, .p-node.active .p-node-circle { border-color: var(--teal); box-shadow: var(--teal-glow); background: var(--navy2); }
-.p-node-label { font-family: var(--font-mono); font-size: .68rem; color: var(--gray); text-align: center; margin-top: 10px; max-width: 70px; }
-.p-node.active .p-node-label { color: var(--teal); }
-.p-arrow { flex: 0 0 auto; width: 40px; height: 2px; background: var(--gray2); position: relative; top: -18px; }
-.p-arrow.active { background: var(--teal); }
+.p-node-circle {
+  width: 58px; height: 58px; border-radius: 14px;
+  background: var(--bg3); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  transition: all .25s; position: relative; z-index: 2; box-shadow: var(--shadow);
+}
+.p-node:hover .p-node-circle { border-color: var(--violet); box-shadow: 0 4px 16px #6C3BEE25; transform: translateY(-2px); }
+.p-node.active .p-node-circle { border-color: var(--violet); background: var(--violet-lt); box-shadow: 0 4px 20px #6C3BEE35; transform: translateY(-2px); }
+.p-node-label { font-family: var(--font-m); font-size: .65rem; color: var(--text3); text-align: center; margin-top: 10px; max-width: 72px; line-height: 1.35; }
+.p-node.active .p-node-label { color: var(--violet); font-weight: 500; }
+.p-arrow { flex: 0 0 auto; width: 40px; height: 2px; background: var(--border); position: relative; top: -18px; transition: background .3s; }
+.p-arrow.active { background: var(--violet); }
 .p-arrow::after { content: '▶'; position: absolute; right: -6px; top: -7px; color: inherit; font-size: .6rem; }
-.pipeline-flow { height: 4px; background: var(--navy); border-radius: 2px; overflow: hidden; margin: 24px 0; }
-.flow-bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--teal), var(--teal2)); border-radius: 2px; transition: width .1s; }
-.pipeline-detail { background: var(--navy); border: 1px solid var(--teal); border-radius: 10px; padding: 20px 24px; min-height: 100px; }
-.pipeline-detail h4 { font-family: var(--font-display); font-weight: 600; color: var(--teal); margin-bottom: 8px; font-size: 1rem; }
-.pipeline-detail p { color: var(--gray); font-size: .88rem; line-height: 1.6; }
-.pipeline-detail code { font-family: var(--font-mono); font-size: .8rem; background: var(--navy3); color: var(--teal); padding: 2px 6px; border-radius: 4px; }
-.pipeline-btn { font-family: var(--font-mono); font-size: .82rem; background: none; border: 1px solid var(--teal); color: var(--teal); padding: 9px 22px; border-radius: 6px; cursor: pointer; transition: all .2s; margin-top: 20px; }
-.pipeline-btn:hover { background: var(--teal); color: var(--navy); }
-.pipeline-timer { font-family: var(--font-mono); font-size: .85rem; color: var(--gray); margin-left: 16px; }
+.flow-track { height: 5px; background: var(--bg2); border-radius: 3px; overflow: hidden; margin: 22px 0 18px; }
+.flow-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--violet), var(--teal)); border-radius: 3px; transition: width .12s; }
+.pipeline-detail { background: var(--bg3); border: 1.5px solid var(--border); border-left: 4px solid var(--violet); border-radius: 10px; padding: 20px 24px; min-height: 100px; }
+.pipeline-detail h4 { font-family: var(--font-d); font-weight: 600; color: var(--violet); margin-bottom: 8px; font-size: .97rem; }
+.pipeline-detail p { color: var(--text3); font-size: .86rem; line-height: 1.65; }
+.pipeline-detail code { font-family: var(--font-m); font-size: .78rem; background: var(--violet-lt); color: var(--indigo); padding: 2px 6px; border-radius: 5px; }
+.pipeline-actions { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+.pipeline-btn { font-family: var(--font-m); font-size: .8rem; background: var(--violet); color: #fff; border: none; padding: 9px 22px; border-radius: 8px; cursor: pointer; transition: all .2s; }
+.pipeline-btn:hover { background: var(--indigo); box-shadow: 0 4px 12px #6C3BEE35; }
+.pipeline-btn:disabled { opacity: .55; cursor: default; }
+.pipeline-timer { font-family: var(--font-m); font-size: .82rem; color: var(--text3); }
 
-/* ── Experience timeline ───────────────────────── */
+/* ── EXPERIENCE ──────────────────────── */
+#experience { background: var(--bg); }
 .timeline { position: relative; padding-left: 32px; }
-.timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--teal), var(--gray2) 80%, transparent); }
+.timeline::before { content:''; position:absolute; left:0; top:8px; bottom:0; width:2px; background: linear-gradient(to bottom, var(--violet), var(--teal), var(--emerald), #e2e5f0); border-radius:2px; }
 .tl-item { position: relative; margin-bottom: 52px; }
-.tl-dot { position: absolute; left: -38px; top: 4px; width: 14px; height: 14px; background: var(--teal); border-radius: 50%; box-shadow: 0 0 0 4px var(--navy2), 0 0 12px var(--teal); }
-.tl-meta { font-family: var(--font-mono); font-size: .75rem; color: var(--teal); margin-bottom: 6px; }
-.tl-company { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--white); }
-.tl-role { font-size: .88rem; color: var(--gray); margin-bottom: 14px; }
-.tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.tl-bullets li { font-size: .88rem; color: var(--gray); padding-left: 18px; position: relative; line-height: 1.6; }
-.tl-bullets li::before { content: '▸'; color: var(--teal); position: absolute; left: 0; }
-.tl-bullets strong { color: var(--white); }
+.tl-dot { position: absolute; left: -39px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg3); border: 3px solid var(--violet); box-shadow: 0 0 0 4px var(--violet-lt); }
+.tl-item:nth-child(2) .tl-dot { border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-lt); }
+.tl-item:nth-child(3) .tl-dot { border-color: var(--amber); box-shadow: 0 0 0 4px var(--amber-lt); }
+.tl-item:nth-child(4) .tl-dot { border-color: var(--emerald); box-shadow: 0 0 0 4px var(--emerald-lt); }
+.tl-meta { font-family: var(--font-m); font-size: .72rem; color: var(--violet); margin-bottom: 5px; }
+.tl-company { font-family: var(--font-d); font-size: 1.15rem; font-weight: 700; color: var(--text); }
+.tl-role { font-size: .86rem; color: var(--text3); margin-bottom: 14px; }
+.tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.tl-bullets li { font-size: .88rem; color: var(--text2); padding-left: 18px; position: relative; line-height: 1.65; }
+.tl-bullets li::before { content: '▸'; color: var(--violet); position: absolute; left: 0; }
+.tl-bullets strong { color: var(--text); }
 .tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.tag { font-family: var(--font-mono); font-size: .7rem; color: var(--teal); border: 1px solid var(--teal2); background: var(--teal-dim); padding: 3px 10px; border-radius: 20px; }
+.tag { font-family: var(--font-m); font-size: .68rem; color: var(--violet); border: 1px solid #c4b5fd; background: var(--violet-lt); padding: 3px 10px; border-radius: 20px; }
+.tl-item:nth-child(2) .tag { color: #0369a1; border-color: #bae6fd; background: var(--teal-lt); }
+.tl-item:nth-child(3) .tag { color: #92400e; border-color: #fde68a; background: var(--amber-lt); }
+.tl-item:nth-child(4) .tag { color: #065f46; border-color: #a7f3d0; background: var(--emerald-lt); }
 
-/* ── Projects ──────────────────────────────────── */
-.project-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-.filter-btn { font-family: var(--font-mono); font-size: .75rem; padding: 6px 16px; border-radius: 20px; border: 1px solid var(--gray2); color: var(--gray); background: none; cursor: pointer; transition: all .2s; }
-.filter-btn:hover, .filter-btn.active { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-.proj-card { background: var(--navy3); border: 1px solid #ffffff10; border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; transition: all .3s; cursor: default; position: relative; overflow: hidden; }
-.proj-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--teal); transform: scaleX(0); transition: transform .3s; transform-origin: left; }
-.proj-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 8px 32px #00000040; }
-.proj-card:hover::after { transform: scaleX(1); }
+/* ── PROJECTS ────────────────────────── */
+#projects { background: var(--bg2); }
+.project-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.filter-btn { font-family: var(--font-m); font-size: .72rem; padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--border); color: var(--text3); background: var(--bg3); cursor: pointer; transition: all .2s; }
+.filter-btn:hover, .filter-btn.active { border-color: var(--violet); color: var(--violet); background: var(--violet-lt); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 18px; }
+.proj-card {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r2);
+  padding: 24px; display: flex; flex-direction: column;
+  transition: all .3s; box-shadow: var(--shadow);
+}
+.proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow2); border-color: #c4b5fd; }
 .proj-card.hidden { display: none; }
-.proj-type { font-family: var(--font-mono); font-size: .68rem; color: var(--teal); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
-.proj-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-.proj-badge { font-size: .68rem; background: var(--gold); color: var(--navy); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-weight: 700; }
-.proj-badge.prod { background: var(--green); }
-.proj-desc { font-size: .84rem; color: var(--gray); line-height: 1.65; flex: 1; margin-bottom: 14px; }
+.proj-type { font-family: var(--font-m); font-size: .66rem; color: var(--text4); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 9px; }
+.proj-title { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 9px; display: flex; align-items: flex-start; gap: 7px; flex-wrap: wrap; }
+.proj-badge { font-size: .63rem; background: var(--amber); color: #fff; padding: 2px 8px; border-radius: 5px; font-family: var(--font-m); font-weight: 700; white-space: nowrap; }
+.proj-badge.prod { background: var(--emerald); }
+.proj-badge.hack { background: var(--coral); }
+.proj-desc { font-size: .83rem; color: var(--text3); line-height: 1.65; flex: 1; margin-bottom: 14px; }
 .proj-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
-.proj-tech { font-family: var(--font-mono); font-size: .68rem; color: var(--gray); border: 1px solid #ffffff12; padding: 2px 8px; border-radius: 4px; }
-.proj-metric { font-family: var(--font-mono); font-size: .78rem; color: var(--teal); border-top: 1px solid #ffffff08; padding-top: 12px; }
+.proj-tech { font-family: var(--font-m); font-size: .67rem; color: var(--text3); border: 1px solid var(--border); background: var(--bg2); padding: 2px 8px; border-radius: 5px; }
+.proj-metric { font-family: var(--font-m); font-size: .76rem; color: var(--emerald); border-top: 1px solid var(--border); padding-top: 12px; }
 
-/* ── Skills ────────────────────────────────────── */
-#skills { background: var(--navy2); max-width: 100%; border-top: 1px solid #ffffff08; }
-#skills .inner { max-width: var(--max-w); margin: 0 auto; padding: clamp(60px,10vh,100px) clamp(20px,5vw,40px); }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-.skill-group { background: var(--navy3); border: 1px solid #ffffff10; border-radius: var(--radius); padding: 22px; transition: border-color .3s; }
-.skill-group:hover { border-color: var(--teal2); }
-.skill-group-title { font-family: var(--font-display); font-weight: 600; font-size: .9rem; color: var(--white); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-.skill-group-title span { color: var(--teal); }
+/* colour accent per card group */
+.proj-card[data-accent="violet"]:hover { border-color: var(--violet); }
+.proj-card[data-accent="teal"]:hover { border-color: var(--teal); }
+.proj-card[data-accent="emerald"]:hover { border-color: var(--emerald); }
+.proj-card[data-accent="coral"]:hover { border-color: var(--coral); }
+
+/* ── SKILLS ──────────────────────────── */
+#skills { background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
+.skill-group { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r2); padding: 22px; transition: all .3s; }
+.skill-group:hover { border-color: var(--violet); box-shadow: var(--shadow2); }
+.skill-group-label { font-family: var(--font-d); font-weight: 600; font-size: .88rem; color: var(--text); margin-bottom: 13px; display: flex; align-items: center; gap: 8px; }
+.skill-group-icon { font-size: 1.1rem; }
 .skill-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-chip { font-family: var(--font-mono); font-size: .72rem; padding: 4px 10px; border-radius: 4px; border: 1px solid #ffffff10; color: var(--gray); transition: all .2s; cursor: default; }
-.skill-chip:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
-.skill-chip.core { border-color: var(--teal2); color: var(--teal); background: var(--teal-dim); }
+.chip { font-family: var(--font-m); font-size: .7rem; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); color: var(--text3); background: var(--bg3); transition: all .2s; cursor: default; }
+.chip:hover, .chip.core { border-color: var(--violet); color: var(--indigo); background: var(--violet-lt); }
 
-/* Terminal proficiency */
-.terminal { background: var(--navy); border: 1px solid var(--gray2); border-radius: 10px; overflow: hidden; margin-top: 40px; }
-.terminal-bar { background: var(--navy3); padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #ffffff08; }
-.term-dot { width: 10px; height: 10px; border-radius: 50%; }
-.term-dot.r { background: #EF4444; }
-.term-dot.y { background: #F59E0B; }
-.term-dot.g { background: #10B981; }
-.terminal-body { padding: 20px; font-family: var(--font-mono); font-size: .8rem; line-height: 1.8; }
-.t-prompt { color: var(--teal); }
-.t-cmd { color: var(--white); }
-.t-out { color: var(--gray); padding-left: 20px; }
-.t-bar-row { display: flex; align-items: center; gap: 12px; padding-left: 20px; margin: 3px 0; }
-.t-bar-label { color: var(--gray); width: 180px; font-size: .75rem; flex-shrink: 0; }
-.t-bar-track { flex: 1; height: 6px; background: var(--navy3); border-radius: 3px; overflow: hidden; }
-.t-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--teal), var(--teal2)); width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-.t-pct { color: var(--teal); width: 36px; text-align: right; font-size: .72rem; }
+/* proficiency bars */
+.prof-section { margin-top: 44px; }
+.prof-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.prof-label { font-size: .82rem; color: var(--text2); width: 200px; flex-shrink: 0; }
+.prof-track { flex: 1; height: 8px; background: var(--bg2); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+.prof-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+.prof-pct { font-family: var(--font-m); font-size: .75rem; width: 36px; text-align: right; color: var(--text3); }
 
-/* ── Awards ───────────────────────────────────── */
-.awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.award-card { background: var(--navy3); border: 1px solid #F59E0B30; border-radius: var(--radius); padding: 20px; display: flex; gap: 16px; align-items: flex-start; transition: border-color .3s; }
-.award-card:hover { border-color: var(--gold); }
+/* ── AWARDS ──────────────────────────── */
+#awards { background: var(--bg2); }
+.awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+.award-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r2); padding: 22px; display: flex; gap: 16px; transition: all .3s; box-shadow: var(--shadow); }
+.award-card:hover { transform: translateY(-3px); box-shadow: var(--shadow2); }
+.award-card:nth-child(1) { border-top: 3px solid var(--amber); }
+.award-card:nth-child(2) { border-top: 3px solid var(--violet); }
+.award-card:nth-child(3) { border-top: 3px solid var(--teal); }
+.award-card:nth-child(4) { border-top: 3px solid var(--emerald); }
+.award-card:nth-child(5) { border-top: 3px solid var(--coral); }
+.award-card:nth-child(6) { border-top: 3px solid var(--amber); }
 .award-icon { font-size: 1.6rem; flex-shrink: 0; }
-.award-title { font-family: var(--font-display); font-weight: 600; font-size: .9rem; color: var(--white); margin-bottom: 4px; }
-.award-org { font-size: .78rem; color: var(--gold); font-family: var(--font-mono); margin-bottom: 6px; }
-.award-desc { font-size: .8rem; color: var(--gray); line-height: 1.55; }
+.award-title { font-family: var(--font-d); font-weight: 600; font-size: .9rem; color: var(--text); margin-bottom: 4px; }
+.award-org { font-size: .75rem; color: var(--violet); font-family: var(--font-m); margin-bottom: 7px; }
+.award-desc { font-size: .8rem; color: var(--text3); line-height: 1.55; }
 
-/* ── Contact ──────────────────────────────────── */
-#contact { text-align: center; }
-.contact-wrap { max-width: 560px; margin: 0 auto; }
-.contact-tagline { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-family: var(--font-display); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
-.contact-tagline span { color: var(--teal); }
-.contact-desc { color: var(--gray); margin-bottom: 36px; font-size: .92rem; }
-.contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.contact-btn { font-family: var(--font-mono); font-size: .82rem; padding: 10px 22px; border-radius: 6px; transition: all .2s; display: flex; align-items: center; gap: 8px; }
-.contact-btn.email { background: var(--teal); color: var(--navy); font-weight: 600; }
-.contact-btn.email:hover { box-shadow: var(--teal-glow); text-decoration: none; }
-.contact-btn.li { border: 1px solid var(--gray2); color: var(--gray); }
-.contact-btn.li:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
-.contact-btn.gh { border: 1px solid var(--gray2); color: var(--gray); }
-.contact-btn.gh:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
+/* ── CONTACT ─────────────────────────── */
+#contact { background: linear-gradient(135deg, #f0ebff 0%, #e8f4ff 60%, #f0fff8 100%); }
+#contact .wrap { text-align: center; }
+.contact-inner { max-width: 560px; margin: 0 auto; }
+.contact-h { font-family: var(--font-d); font-size: clamp(1.7rem,3.5vw,2.3rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+.contact-h .gr { background: linear-gradient(135deg, var(--violet), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.contact-desc { color: var(--text3); margin-bottom: 36px; font-size: .92rem; }
+.contact-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.c-btn { font-family: var(--font-m); font-size: .8rem; padding: 11px 22px; border-radius: 9px; transition: all .2s; display: flex; align-items: center; gap: 8px; }
+.c-btn.email { background: var(--violet); color: #fff; box-shadow: 0 4px 14px #6C3BEE30; }
+.c-btn.email:hover { background: var(--indigo); transform: translateY(-1px); }
+.c-btn.li, .c-btn.gh { border: 1.5px solid var(--border); color: var(--text3); background: var(--bg3); }
+.c-btn.li:hover, .c-btn.gh:hover { border-color: var(--violet); color: var(--violet); background: var(--violet-lt); }
 
-/* ── Footer ───────────────────────────────────── */
-footer { text-align: center; padding: 28px; font-family: var(--font-mono); font-size: .72rem; color: var(--gray2); border-top: 1px solid #ffffff08; }
+footer { text-align: center; padding: 28px; font-family: var(--font-m); font-size: .7rem; color: var(--text4); border-top: 1px solid var(--border); background: var(--bg3); }
 
-/* ── Scroll reveal ────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+/* ── Scroll reveal ────────────────────── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ── Mobile ───────────────────────────────────── */
+/* ── Mobile ───────────────────────────── */
 @media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .nav-links, .nav-cta { display: none; }
   .nav-mobile-btn { display: block; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .awards-grid { grid-template-columns: 1fr; }
+  .projects-grid, .skills-grid, .awards-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -240,7 +286,7 @@ footer { text-align: center; padding: 28px; font-family: var(--font-mono); font-
 </head>
 <body>
 
-<!-- ── NAV ────────────────────────────────────── -->
+<!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">nn.</a>
   <ul class="nav-links">
@@ -252,492 +298,450 @@ footer { text-align: center; padding: 28px; font-family: var(--font-mono); font-
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="mailto:namamnavneet@gmail.com" class="nav-cta">say hello →</a>
-  <button class="nav-mobile-btn" onclick="toggleMobileMenu()">☰</button>
+  <button class="nav-mobile-btn" onclick="toggleMenu()">☰</button>
 </nav>
 
-<!-- ── HERO ───────────────────────────────────── -->
+<!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+  <div class="hero-blobs"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-tag">AI Engineer &nbsp;·&nbsp; ZS Associates &nbsp;·&nbsp; Bangalore</div>
-      <h1 class="hero-h1">I build <span>Agentic AI</span><br>that ships.</h1>
-      <div class="hero-typewriter"><span id="typewriter"></span><span class="cursor"></span></div>
-      <p class="hero-desc">3 years building production LLM systems for global pharma and FMCG enterprises — Simulate.AI, Coach.AI, LiveCall.AI, BritBot. Specialist in multi-agent orchestration, RAG pipelines, and FastAPI backends. 🏆 ZS AI Hackathon 2025 winner.</p>
-      <div class="hero-links">
+      <div class="hero-tag"><div class="hero-dot"></div>AI Engineer &nbsp;·&nbsp; ZS Associates &nbsp;·&nbsp; Bangalore</div>
+      <h1 class="hero-h1">I build <span class="gr">Agentic AI</span><br>that ships.</h1>
+      <div class="hero-typewriter"><span id="tw"></span><span class="cursor"></span></div>
+      <p class="hero-desc">3 years building production LLM systems for global pharma and FMCG — Simulate.AI, Coach.AI, LiveCall.AI, BritBot. Expert in multi-agent orchestration, RAG pipelines, and FastAPI backends. 🏆 ZS AI Hackathon 2025 winner.</p>
+      <div class="hero-btns">
         <a href="#pipeline" class="btn-primary">See the pipeline ↓</a>
         <a href="#projects" class="btn-ghost">Browse projects</a>
         <a href="https://linkedin.com/in/naman-navneet" class="btn-ghost" target="_blank">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="600" data-suffix="+">0</span></div>
-        <div class="stat-label">professionals using platforms I've built</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="3" data-suffix="">0</span></div>
-        <div class="stat-label">production AI platforms shipped at ZS</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="17" data-suffix="">0</span></div>
-        <div class="stat-label">languages supported by translation pipeline</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="94" data-suffix="%">0</span></div>
-        <div class="stat-label">AI classification accuracy (MURAL prompt optimizer)</div>
-      </div>
+      <div class="stat-card"><div class="stat-num"><span class="ctr" data-t="600" data-s="+">0</span></div><div class="stat-label">professionals using platforms I've built</div></div>
+      <div class="stat-card"><div class="stat-num"><span class="ctr" data-t="3" data-s="">0</span></div><div class="stat-label">production AI platforms shipped at ZS</div></div>
+      <div class="stat-card"><div class="stat-num"><span class="ctr" data-t="17" data-s="">0</span></div><div class="stat-label">languages in the translation pipeline</div></div>
+      <div class="stat-card"><div class="stat-num"><span class="ctr" data-t="94" data-s="%">0</span></div><div class="stat-label">AI classification accuracy (MURAL)</div></div>
     </div>
   </div>
 </section>
 
-<!-- Tech strip -->
-<div class="tech-strip">
-  <div class="tech-strip-inner" id="strip">
-    <!-- duplicated by JS for infinite scroll -->
-  </div>
-</div>
+<!-- TECH STRIP -->
+<div class="tech-strip"><div class="strip-inner" id="strip"></div></div>
 
-<!-- ── PIPELINE ───────────────────────────────── -->
+<!-- PIPELINE — Simulate.AI -->
 <div id="pipeline">
-<div class="inner">
-  <div class="section-label">01 — flagship architecture</div>
-  <h2 class="section-title">Inside the Coach.AI<br>Agentic Pipeline</h2>
-  <p class="pipeline-desc">This is the actual multi-agent architecture powering Coach.AI — the enterprise coaching platform I built at ZS. Click any node to see what it does. Hit Run to watch a manager's question travel through the system.</p>
-
+<div class="wrap">
+  <div class="s-eyebrow">01 — flagship architecture</div>
+  <h2 class="s-title">Inside <span style="color:var(--violet)">Simulate.AI</span>'s<br>Admin & AI Pipeline</h2>
+  <p class="pipeline-desc">Simulate.AI is a virtual pharma sales simulation platform I built at ZS — used by 400+ reps across 3 global clients. Click any stage to explore the architecture. Hit Run to watch a profile creation request travel end-to-end.</p>
   <div class="pipeline-container">
-    <div class="pipeline-nodes" id="pipelineNodes">
-      <!-- nodes injected by JS -->
+    <div class="pipeline-nodes" id="pNodes"></div>
+    <div class="flow-track"><div class="flow-fill" id="flowFill"></div></div>
+    <div class="pipeline-detail" id="pDetail"><h4>Click any stage to explore</h4><p>Each stage of Simulate.AI's pipeline is independently optimisable. Click a node above to see technical details, design decisions, and what I built.</p></div>
+    <div class="pipeline-actions">
+      <button class="pipeline-btn" id="runBtn" onclick="runPipeline()">▶ Run a profile creation</button>
+      <span class="pipeline-timer" id="pTimer"></span>
     </div>
-    <div class="pipeline-flow"><div class="flow-bar" id="flowBar"></div></div>
-    <div class="pipeline-detail" id="pipelineDetail">
-      <h4>Click any node to explore the architecture</h4>
-      <p>Each stage of the pipeline is independently optimizable. Hover or click a node above to see technical details, latency characteristics, and design decisions.</p>
-    </div>
-    <button class="pipeline-btn" id="runBtn" onclick="runPipeline()">▶ Run a query turn</button>
-    <span class="pipeline-timer" id="pipelineTimer"></span>
   </div>
 </div>
 </div>
 
-<!-- ── EXPERIENCE ─────────────────────────────── -->
+<!-- EXPERIENCE -->
 <section id="experience" class="reveal">
-  <div class="section-label">02 — where I've worked</div>
-  <h2 class="section-title">Experience</h2>
+<div class="wrap" style="padding-top:0;max-width:var(--maxw);margin:0 auto;padding:clamp(70px,10vh,110px) clamp(20px,5vw,40px);">
+  <div class="s-eyebrow">02 — where I've worked</div>
+  <h2 class="s-title">Experience</h2>
   <div class="timeline">
 
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-meta">Jul 2024 — Present &nbsp;·&nbsp; Bangalore, India</div>
       <div class="tl-company">ZS Associates</div>
-      <div class="tl-role">Advanced Data Science Associate &nbsp;·&nbsp; Global life sciences consulting firm, 13,000+ employees</div>
+      <div class="tl-role">Advanced Data Science Associate &nbsp;·&nbsp; Global life sciences consulting, 13,000+ employees</div>
       <ul class="tl-bullets">
-        <li><strong>Architected Simulate.AI</strong> — enterprise virtual pharma sales simulation platform used by 400+ reps across 3 global clients. Built 7-step Admin Portal wizard (FastAPI + PostgreSQL), Automated Dynamic Translator (17-language LLM pipeline, 2 weeks → same-day localization), and Automated Profile Builder (GPT-4.1 Vision + PDF ingestion).</li>
-        <li><strong>Built MURAL</strong> — prompt-level optimization engine inspired by GRPO. Reward-guided feedback loop (semantic similarity + length penalty) raises AI classification accuracy <strong>80% → 94%+</strong> without model retraining.</li>
-        <li><strong>Designed Coach.AI's dual-agent pipeline</strong> (LangChain): LLM tool-selection routes queries between CoachDB and VRT DB; SQL analytics agent + sentence-transformer semantic search. Reduced manager coaching prep time <strong>45 min → under 10 min</strong>.</li>
-        <li><strong>Deployed LiveCall.AI</strong> — batch audio evaluation processing 500+ pharma sales calls/month: AWS Transcribe (speaker diarization) + 7 parallel GPT-4o evaluations + SSE streaming. Reduced manual QA time by <strong>70%</strong>.</li>
-        <li>🏆 <strong>Won ZS AI Practice Hackathon 2025</strong> with PharmRebalance — multi-agent pharma supply chain optimizer (LP solver, 4 agents, prevented 5,398 patient-days of medication loss in simulation).</li>
-        <li>🎤 <strong>Speaker</strong> at ZS AppDev TED-style talks on Simulate.AI architecture & GenAI in pharma training.</li>
+        <li><strong>Architected Simulate.AI</strong> — enterprise virtual pharma sales simulation platform (400+ active reps, 3 global pharma clients). Built 7-step Admin Portal wizard, Automated Dynamic Translator (17 languages, <strong>2 weeks → same-day</strong> localization), and Automated Profile Builder (GPT-4.1 Vision + PDF ingestion).</li>
+        <li><strong>Built MURAL</strong> — GRPO-inspired prompt optimization engine: reward = 0.85 × semantic_sim – 0.15 × length_penalty; raised AI classification accuracy <strong>80% → 94%+</strong> without model retraining.</li>
+        <li><strong>Designed Coach.AI's dual-agent pipeline</strong> — LLM tool-selection routing + SQL analytics agent + sentence-transformer semantic search + GPT-4o SSE streaming. Coaching prep time: <strong>45 min → &lt;10 min</strong>.</li>
+        <li><strong>Deployed LiveCall.AI</strong> — 500+ pharma calls/month; AWS Transcribe + 7 parallel GPT-4o evals + SSE batch streaming. <strong>70% reduction</strong> in manual QA review time.</li>
+        <li>🏆 <strong>Won ZS AI Hackathon 2025</strong> — PharmRebalance: 4-agent supply chain optimizer preventing 5,398 patient-days of medication loss.</li>
+        <li>🎤 <strong>Speaker</strong> at ZS AppDev TED-style talks on Simulate.AI architecture & GenAI in pharma.</li>
       </ul>
-      <div class="tl-tags">
-        <span class="tag">GPT-4o/4.1</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">FastMCP</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">RAG</span><span class="tag">Agentic AI</span>
-      </div>
+      <div class="tl-tags"><span class="tag">GPT-4o/4.1</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">FastMCP</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">RAG</span></div>
     </div>
 
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-meta">Aug 2023 — Jun 2024 &nbsp;·&nbsp; Bangalore, India</div>
       <div class="tl-company">Britannia Industries Limited</div>
-      <div class="tl-role">Artificial Intelligence Analyst &nbsp;·&nbsp; Fortune India 500, ₹15,000+ Cr revenue FMCG</div>
+      <div class="tl-role">Artificial Intelligence Analyst &nbsp;·&nbsp; Fortune India 500, ₹15,000+ Cr FMCG</div>
       <ul class="tl-bullets">
-        <li><strong>Built BritBot</strong> — NL-to-SQL conversational chatbot (Gemini Pro + LangChain + SQLite + AWS EC2) enabling 15+ non-technical stakeholders to query trade data. Ad-hoc turnaround <strong>2 days → real-time</strong>, reduced analytics team workload ~40%.</li>
-        <li><strong>Built Trade Ineffectiveness System</strong> — Ensemble DNN + XGBoost (82% accuracy) flagging ~<strong>₹2 Cr/month</strong> in ineffective promotional spend across 500+ schemes. Contributed to 12% spend reduction over 6 months.</li>
+        <li><strong>Built BritBot</strong> — NL-to-SQL chatbot (Gemini Pro + LangChain + SQLite + AWS EC2). Ad-hoc data turnaround <strong>2 days → real-time</strong>, analytics team workload cut ~40%.</li>
+        <li><strong>Built Trade Ineffectiveness System</strong> — Ensemble DNN + XGBoost (82% accuracy) flagging ~<strong>₹2 Cr/month</strong> in ineffective promotional spend. 12% spend reduction over 6 months.</li>
       </ul>
-      <div class="tl-tags">
-        <span class="tag">Gemini Pro</span><span class="tag">LangChain</span><span class="tag">SQLite</span><span class="tag">Streamlit</span><span class="tag">AWS EC2</span><span class="tag">TensorFlow</span><span class="tag">XGBoost</span>
-      </div>
+      <div class="tl-tags"><span class="tag">Gemini Pro</span><span class="tag">LangChain</span><span class="tag">SQLite</span><span class="tag">Streamlit</span><span class="tag">AWS EC2</span><span class="tag">TensorFlow</span><span class="tag">XGBoost</span></div>
     </div>
 
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-meta">Jun 2022 — Jul 2022 &nbsp;·&nbsp; Bangalore, India</div>
-      <div class="tl-company">Axis Bank — Business Intelligence Unit</div>
+      <div class="tl-company">Axis Bank — BIU</div>
       <div class="tl-role">Business Intelligence Analyst Intern</div>
       <ul class="tl-bullets">
-        <li>Built financial valuation model for 6 debit card variants (NPV, IRR, ROA, Vintage Curves) covering <strong>₹500 Cr+ portfolio</strong>. Presented findings to Head of BIU.</li>
+        <li>Built financial valuation model for 6 debit card variants (NPV, IRR, ROA, Vintage Curves) covering <strong>₹500 Cr+ portfolio</strong>. Presented to Head of BIU.</li>
       </ul>
-      <div class="tl-tags"><span class="tag">SAS</span><span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">Financial Modelling</span></div>
+      <div class="tl-tags"><span class="tag">SAS</span><span class="tag">SQL</span><span class="tag">Excel</span></div>
     </div>
 
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-meta">2019 — 2023 &nbsp;·&nbsp; Mesra, India</div>
-      <div class="tl-company">Birla Institute of Technology, Mesra</div>
-      <div class="tl-role">B.Tech — Electronics & Communications Engineering &nbsp;·&nbsp; CGPA: 8.57/10</div>
+      <div class="tl-meta">2019 — 2023</div>
+      <div class="tl-company">BIT Mesra</div>
+      <div class="tl-role">B.Tech — Electronics & Communications Engineering &nbsp;·&nbsp; CGPA 8.57/10</div>
       <ul class="tl-bullets">
-        <li>Final Year Project: Pest Detection with YOLOv5 — <strong>91.9% mAP</strong>, 96.7% Precision on custom rice-pest dataset.</li>
-        <li>Minor Project: Smart Plant Monitoring System (IoT — NodeMCU ESP8266, Blynk).</li>
+        <li>Final Year Project: YOLOv5 pest detection — <strong>91.9% mAP, 96.7% Precision</strong> on custom rice-pest dataset.</li>
       </ul>
+      <div class="tl-tags"><span class="tag">Python</span><span class="tag">YOLOv5</span><span class="tag">Deep Learning</span></div>
     </div>
-
   </div>
+</div>
 </section>
 
-<!-- ── PROJECTS ───────────────────────────────── -->
+<!-- PROJECTS -->
 <section id="projects" class="reveal">
-  <div class="section-label">03 — selected builds</div>
-  <h2 class="section-title">Projects</h2>
-  <p style="color:var(--gray);margin-bottom:28px;font-size:.9rem;">Real systems — shipped or won something. Filter by type.</p>
+<div class="wrap">
+  <div class="s-eyebrow">03 — selected builds</div>
+  <h2 class="s-title">Projects</h2>
+  <p style="color:var(--text3);margin-bottom:24px;font-size:.9rem;">Real systems — shipped, deployed, or won something. Filter by type.</p>
   <div class="project-filters">
-    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
-    <button class="filter-btn" onclick="filterProjects('production', this)">Production</button>
-    <button class="filter-btn" onclick="filterProjects('agentic', this)">Agentic AI</button>
-    <button class="filter-btn" onclick="filterProjects('rag', this)">RAG</button>
-    <button class="filter-btn" onclick="filterProjects('ml', this)">ML / Data</button>
-    <button class="filter-btn" onclick="filterProjects('hackathon', this)">Hackathon</button>
+    <button class="filter-btn active" onclick="filter('all',this)">All</button>
+    <button class="filter-btn" onclick="filter('production',this)">Production</button>
+    <button class="filter-btn" onclick="filter('agentic',this)">Agentic AI</button>
+    <button class="filter-btn" onclick="filter('rag',this)">RAG</button>
+    <button class="filter-btn" onclick="filter('ml',this)">ML / Data</button>
+    <button class="filter-btn" onclick="filter('hackathon',this)">Hackathon</button>
   </div>
-  <div class="projects-grid" id="projectsGrid">
-    <!-- injected by JS -->
-  </div>
+  <div class="projects-grid" id="pgrid"></div>
+</div>
 </section>
 
-<!-- ── SKILLS ─────────────────────────────────── -->
+<!-- SKILLS -->
 <div id="skills">
-<div class="inner">
-  <div class="section-label">04 — toolbox</div>
-  <h2 class="section-title">Skills</h2>
-  <p style="color:var(--gray);margin-bottom:32px;font-size:.9rem;">Hover a chip — <span style="color:var(--teal)">teal ones</span> are what I reach for daily.</p>
-
+<div class="wrap">
+  <div class="s-eyebrow">04 — toolbox</div>
+  <h2 class="s-title">Skills</h2>
+  <p style="color:var(--text3);margin-bottom:28px;font-size:.9rem;">Hover a chip — <span style="color:var(--violet);font-weight:600">purple ones</span> are my daily drivers.</p>
   <div class="skills-grid">
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>⚡</span> Generative AI & LLMs</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">GPT-4o / 4.1</span><span class="skill-chip core">Claude 3.5/3.7</span><span class="skill-chip core">Gemini Pro</span><span class="skill-chip">LLaMA 3</span><span class="skill-chip">DeepSeek</span><span class="skill-chip core">Hugging Face</span><span class="skill-chip">PEFT / LoRA</span><span class="skill-chip">Instruction Tuning</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">⚡</span> Generative AI & LLMs</div>
+      <div class="skill-chips"><span class="chip core">GPT-4o / 4.1</span><span class="chip core">Claude 3.7</span><span class="chip core">Gemini Pro</span><span class="chip">LLaMA 3</span><span class="chip">DeepSeek</span><span class="chip core">Hugging Face</span><span class="chip">PEFT / LoRA</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>🤖</span> Agentic AI & Orchestration</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">LangChain</span><span class="skill-chip core">LangGraph</span><span class="skill-chip core">LlamaIndex</span><span class="skill-chip core">FastMCP</span><span class="skill-chip">Multi-agent Systems</span><span class="skill-chip">Tool Use</span><span class="skill-chip">ReAct</span><span class="skill-chip">Chain-of-Thought</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">🤖</span> Agentic AI</div>
+      <div class="skill-chips"><span class="chip core">LangChain</span><span class="chip core">LangGraph</span><span class="chip core">LlamaIndex</span><span class="chip core">FastMCP</span><span class="chip">Multi-agent</span><span class="chip">Tool Use</span><span class="chip">ReAct</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>🔍</span> RAG & Knowledge Systems</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">RAG Pipelines</span><span class="skill-chip core">Semantic Search</span><span class="skill-chip core">Sentence Transformers</span><span class="skill-chip">FAISS</span><span class="skill-chip">ChromaDB</span><span class="skill-chip">Vector Databases</span><span class="skill-chip">Embedding Models</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">🔍</span> RAG & Retrieval</div>
+      <div class="skill-chips"><span class="chip core">RAG Pipelines</span><span class="chip core">Semantic Search</span><span class="chip core">Sentence Transformers</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">Embeddings</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>🛠️</span> Backend & APIs</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">FastAPI</span><span class="skill-chip core">Python</span><span class="skill-chip core">PostgreSQL</span><span class="skill-chip">MySQL</span><span class="skill-chip">SQLite</span><span class="skill-chip core">REST APIs</span><span class="skill-chip">SSE Streaming</span><span class="skill-chip">Kubernetes</span><span class="skill-chip">Docker</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">🛠️</span> Backend & APIs</div>
+      <div class="skill-chips"><span class="chip core">FastAPI</span><span class="chip core">Python</span><span class="chip core">PostgreSQL</span><span class="chip">MySQL</span><span class="chip core">REST APIs</span><span class="chip">SSE Streaming</span><span class="chip">Kubernetes</span><span class="chip">Docker</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>☁️</span> Cloud & MLOps</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">AWS EC2</span><span class="skill-chip core">AWS S3</span><span class="skill-chip core">AWS Transcribe</span><span class="skill-chip">Google AI Platform</span><span class="skill-chip">Azure ML</span><span class="skill-chip">MLflow</span><span class="skill-chip">Kubeflow</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">☁️</span> Cloud & MLOps</div>
+      <div class="skill-chips"><span class="chip core">AWS EC2</span><span class="chip core">AWS S3</span><span class="chip core">AWS Transcribe</span><span class="chip">Azure ML</span><span class="chip">MLflow</span><span class="chip">Kubeflow</span><span class="chip">Docker</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>🧠</span> ML & Deep Learning</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">TensorFlow</span><span class="skill-chip core">PyTorch</span><span class="skill-chip core">Scikit-learn</span><span class="skill-chip core">XGBoost</span><span class="skill-chip">CNN</span><span class="skill-chip">DNN</span><span class="skill-chip">Ensemble Models</span><span class="skill-chip">YOLOv5</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">🧠</span> ML & Deep Learning</div>
+      <div class="skill-chips"><span class="chip core">TensorFlow</span><span class="chip core">PyTorch</span><span class="chip core">Scikit-learn</span><span class="chip core">XGBoost</span><span class="chip">CNN / DNN</span><span class="chip">Ensemble</span><span class="chip">YOLOv5</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>📊</span> Data & Analytics</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">SQL</span><span class="skill-chip core">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip core">Tableau</span><span class="skill-chip core">Streamlit</span><span class="skill-chip">Matplotlib</span><span class="skill-chip">Excel</span><span class="skill-chip">SAS</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">📊</span> Data & Analytics</div>
+      <div class="skill-chips"><span class="chip core">SQL</span><span class="chip core">Pandas</span><span class="chip">NumPy</span><span class="chip core">Tableau</span><span class="chip core">Streamlit</span><span class="chip">Matplotlib</span><span class="chip">SAS</span></div>
     </div>
     <div class="skill-group reveal">
-      <div class="skill-group-title"><span>💡</span> Prompt Engineering</div>
-      <div class="skill-chips">
-        <span class="skill-chip core">Few-Shot Prompting</span><span class="skill-chip core">Prompt Optimization</span><span class="skill-chip">GRPO-inspired</span><span class="skill-chip">Evaluation Frameworks</span><span class="skill-chip">System Prompt Design</span><span class="skill-chip">Constitutional AI</span>
-      </div>
+      <div class="skill-group-label"><span class="skill-group-icon">💡</span> Prompt Engineering</div>
+      <div class="skill-chips"><span class="chip core">Few-Shot</span><span class="chip core">Prompt Optimisation</span><span class="chip">GRPO-inspired</span><span class="chip">Evaluation</span><span class="chip">System Design</span></div>
     </div>
   </div>
 
-  <div class="terminal reveal" style="margin-top:40px;">
-    <div class="terminal-bar">
-      <div class="term-dot r"></div><div class="term-dot y"></div><div class="term-dot g"></div>
-      <span style="font-family:var(--font-mono);font-size:.75rem;color:var(--gray);margin-left:8px;">naman@ai-engineer ~ proficiency.sh</span>
-    </div>
-    <div class="terminal-body" id="terminalBody">
-      <div><span class="t-prompt">$ </span><span class="t-cmd">./proficiency.sh --show-ratings</span></div>
-      <div class="t-out" style="margin:8px 0 4px;">Loading skill proficiency matrix...</div>
-      <!-- bars injected by JS -->
-    </div>
+  <!-- Proficiency bars -->
+  <div class="prof-section reveal">
+    <h3 style="font-family:var(--font-d);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:22px;">Proficiency</h3>
+    <div id="profBars"></div>
   </div>
 </div>
 </div>
 
-<!-- ── AWARDS ──────────────────────────────────── -->
+<!-- AWARDS -->
 <section id="awards" class="reveal">
-  <div class="section-label">05 — recognition</div>
-  <h2 class="section-title">Awards & Recognition</h2>
+<div class="wrap">
+  <div class="s-eyebrow">05 — recognition</div>
+  <h2 class="s-title">Awards & Recognition</h2>
   <div class="awards-grid">
-    <div class="award-card"><div class="award-icon">🏆</div><div><div class="award-title">1st Place — ZS AI Practice Hackathon 2025</div><div class="award-org">ZS Associates · March 2025</div><div class="award-desc">Won first place out of 20+ teams for PharmRebalance — a 4-agent pharma supply chain optimizer preventing 5,398 patient-days of medication loss.</div></div></div>
-    <div class="award-card"><div class="award-icon">🎤</div><div><div class="award-title">AppDev TED-style Talk Speaker</div><div class="award-org">ZS Associates Internal Tech Conference · Nov 2024</div><div class="award-desc">Selected speaker presenting Simulate.AI's agentic architecture and multilingual pipeline to 150+ engineers and product leaders.</div></div></div>
-    <div class="award-card"><div class="award-icon">🌐</div><div><div class="award-title">Google AI Hackathon — Gemini API Developer Competition</div><div class="award-org">Google · June 2024</div><div class="award-desc">Built InsureClimate AI — agentic insurance risk research tool with LangChain, Gemini, and Tavily. Full report generation in under 90 seconds.</div></div></div>
-    <div class="award-card"><div class="award-icon">🤖</div><div><div class="award-title">LangChain × LlamaIndex Global Agents Hackathon</div><div class="award-org">LangChain & LlamaIndex (Devpost) · Jan 2025</div><div class="award-desc">Built multi-step document reasoning workflow with LangGraph and LlamaIndex. Competed against 800+ global submissions.</div></div></div>
-    <div class="award-card"><div class="award-icon">⚡</div><div><div class="award-title">Anthropic Prompt Engineering Hackathon</div><div class="award-org">Anthropic (Lablab.ai) · Sep 2024</div><div class="award-desc">48-hour challenge using Claude. Developed an automated prompt optimization pipeline with constitutional AI evaluation principles.</div></div></div>
-    <div class="award-card"><div class="award-icon">🥇</div><div><div class="award-title">CodeChef Global Rank 62</div><div class="award-org">CodeChef July Cook-Off 2021 · 10,000+ candidates</div><div class="award-desc">Ranked 62nd globally in competitive programming. Also: Coding Ninja Scholarship Test — Global Rank 58 out of 2,000 candidates.</div></div></div>
+    <div class="award-card"><div class="award-icon">🏆</div><div><div class="award-title">1st Place — ZS AI Practice Hackathon 2025</div><div class="award-org">ZS Associates · March 2025</div><div class="award-desc">Won first place out of 20+ teams for PharmRebalance — a 4-agent pharma supply chain optimizer that prevented 5,398 patient-days of medication loss in simulation.</div></div></div>
+    <div class="award-card"><div class="award-icon">🎤</div><div><div class="award-title">AppDev TED-style Talk Speaker</div><div class="award-org">ZS Internal Tech Conference · Nov 2024</div><div class="award-desc">Selected speaker presenting Simulate.AI architecture and multilingual LLM pipeline to 150+ engineers and product leaders.</div></div></div>
+    <div class="award-card"><div class="award-icon">🌐</div><div><div class="award-title">Google AI Hackathon — Gemini API</div><div class="award-org">Google · June 2024</div><div class="award-desc">Built InsureClimate AI — agentic insurance risk research tool. ROUGE-L 87%, full report in &lt;90 seconds.</div></div></div>
+    <div class="award-card"><div class="award-icon">🤖</div><div><div class="award-title">LangChain × LlamaIndex Agents Hackathon</div><div class="award-org">LangChain & LlamaIndex · Jan 2025</div><div class="award-desc">Built multi-step document reasoning with LangGraph. Competed against 800+ global submissions.</div></div></div>
+    <div class="award-card"><div class="award-icon">⚡</div><div><div class="award-title">Anthropic Prompt Engineering Hackathon</div><div class="award-org">Anthropic (Lablab.ai) · Sep 2024</div><div class="award-desc">48-hour challenge using Claude — automated prompt optimization pipeline with constitutional AI evaluation.</div></div></div>
+    <div class="award-card"><div class="award-icon">🥇</div><div><div class="award-title">CodeChef Global Rank 62 &amp; CN Rank 58</div><div class="award-org">CodeChef Cook-Off 2021 · Coding Ninjas 2021</div><div class="award-desc">Global Rank 62 / 10,000 candidates (CodeChef). Global Rank 58 / 2,000 candidates (Coding Ninjas Scholarship Test).</div></div></div>
   </div>
+</div>
 </section>
 
-<!-- ── CONTACT ─────────────────────────────────── -->
-<section id="contact" class="reveal">
-  <div class="contact-wrap">
-    <div class="section-label" style="text-align:center;">06 — let's talk</div>
-    <h2 class="contact-tagline">Building something with<br><span>Generative AI?</span></h2>
-    <p class="contact-desc">I'm always happy to talk about agentic architectures, RAG pipelines, prompt optimization, or why your LLM output keeps drifting. Open to collaborations and interesting problems.</p>
+<!-- CONTACT -->
+<section id="contact">
+<div class="wrap">
+  <div class="contact-inner">
+    <div class="s-eyebrow" style="justify-content:center;">06 — let's talk</div>
+    <h2 class="contact-h">Building something with<br><span class="gr">Generative AI?</span></h2>
+    <p class="contact-desc">Happy to talk about agentic architectures, RAG pipelines, prompt optimization, or anything applied AI. Open to interesting collaborations.</p>
     <div class="contact-links">
-      <a href="mailto:namamnavneet@gmail.com" class="contact-btn email">✉ namamnavneet@gmail.com</a>
-      <a href="https://linkedin.com/in/naman-navneet" target="_blank" class="contact-btn li">in LinkedIn ↗</a>
-      <a href="https://github.com/NamanNavneet" target="_blank" class="contact-btn gh">⌥ GitHub ↗</a>
+      <a href="mailto:namamnavneet@gmail.com" class="c-btn email">✉ namamnavneet@gmail.com</a>
+      <a href="https://linkedin.com/in/naman-navneet" target="_blank" class="c-btn li">in LinkedIn ↗</a>
+      <a href="https://github.com/NamanNavneet" target="_blank" class="c-btn gh">⌥ GitHub ↗</a>
     </div>
   </div>
+</div>
 </section>
 
-<footer>© 2026 Naman Navneet · Bangalore &nbsp;·&nbsp; Hand-built with vanilla HTML/CSS/JS</footer>
+<footer>© 2026 Naman Navneet · Bangalore &nbsp;·&nbsp; Built with vanilla HTML / CSS / JS</footer>
 
 <script>
-// ── Data ────────────────────────────────────────
-const TECHS = ['GPT-4o','LangChain','LangGraph','FastMCP','FastAPI','PostgreSQL','AWS EC2','RAG','Agentic AI','LlamaIndex','Python','TensorFlow','PyTorch','XGBoost','Streamlit','Kubernetes','FAISS','Sentence Transformers','Gemini Pro','Claude','PEFT/LoRA','Prompt Engineering','SQLite','Tableau','SAS','Docker','AWS Transcribe'];
+// ── Data ─────────────────────────────────────────────────────
+const TECHS = ['GPT-4o','LangChain','LangGraph','FastMCP','FastAPI','PostgreSQL','AWS','RAG','Agentic AI','LlamaIndex','Python','TensorFlow','PyTorch','XGBoost','Streamlit','Kubernetes','FAISS','Sentence Transformers','Gemini Pro','Claude','PEFT/LoRA','Prompt Engineering','SQLite','Tableau','Docker','AWS Transcribe'];
 
-const PIPELINE_NODES = [
-  { emoji:'💬', label:'Manager Query', detail:'<h4>Manager Query Input</h4><p>A sales manager types a question like "How is rep Sarah doing this quarter?" into the Coach.AI chat interface. The query is received by the FastAPI backend and passed to the LLM pipeline with <code>user_email</code> and <code>manager_id</code> for auth validation.</p>' },
-  { emoji:'🔀', label:'Intent Classifier', detail:'<h4>Intent Classification Model</h4><p>A custom classifier (87% accuracy, trained on 12 intent categories) determines query type: <code>performance_query</code>, <code>coaching_session</code>, <code>kpi_lookup</code>, <code>rep_comparison</code>, etc. This controls which agents activate downstream. Built with scikit-learn + sentence-transformers features.</p>' },
-  { emoji:'🧭', label:'LLM Router', detail:'<h4>LLM Tool-Selection Router</h4><p>GPT-4o receives the classified query + available tool schemas and selects which data source(s) to query: <strong>CoachDB</strong> (coaching sessions, KPIs, feedback, action items) or <strong>VRT DB</strong> (virtual roleplay training scores, conversation transcripts). Uses OpenAI function calling to make this decision with zero hardcoded routing logic.</p>' },
-  { emoji:'🔍', label:'Semantic Search', detail:'<h4>Semantic Memory Retrieval</h4><p>Runs <code>all-MiniLM-L6-v2</code> sentence-transformer embeddings over the past 50 coaching conversations for this manager–rep pair. Retrieves the top-k most semantically relevant past exchanges to inject as context — preventing the LLM from giving generic advice and grounding it in the actual history.</p>' },
-  { emoji:'🤖', label:'SQL Agent', detail:'<h4>LangChain SQL Analytics Agent</h4><p>A LangChain agent with access to structured query tools executes analytical SQL against PostgreSQL (CoachDB) and MySQL (VRT DB). It handles multi-hop queries: first fetching the rep\'s ID, then pulling their 90-day KPI trend, then computing peer percentile ranking — all in a single agent loop.</p>' },
-  { emoji:'⚡', label:'GPT-4o SSE', detail:'<h4>Streaming Response Generation</h4><p>GPT-4o receives: (1) system prompt with coaching persona, (2) retrieved semantic context, (3) structured analytics data from the SQL agent, (4) the original query. Streams the coaching response via <strong>Server-Sent Events</strong> — the manager sees tokens arriving in real time, reducing perceived latency by ~60% vs batch API.</p>' },
-  { emoji:'📋', label:'Action Items', detail:'<h4>FastMCP Action Item Manager</h4><p>If the response includes recommended next steps for the manager, the FastMCP server automatically creates structured action items in the coaching platform — with assignee, due date, and a link back to the conversation. Managers can tick these off in the dashboard without leaving the chat.</p>' },
+const PIPELINE = [
+  { emoji:'📄', label:'Client Brief\nUpload',
+    detail:`<h4>Client Brief / PDF Upload</h4><p>A ZS admin uploads a client brief PDF — a pharmaceutical company document describing their HCP personas, therapeutic area, and key selling messages. The Admin Portal receives it via multipart upload, stores it to <code>AWS S3</code>, and triggers the Profile Builder pipeline. Supports multi-page PDFs up to 50MB.</p>` },
+  { emoji:'🔍', label:'GPT-4.1 Vision\nExtraction',
+    detail:`<h4>GPT-4.1 Vision — Page-by-Page Extraction</h4><p>Each PDF page is rasterised to base64 images and sent to <code>GPT-4.1 Vision</code> in parallel via <code>ThreadPoolExecutor</code>. The prompt instructs the model to extract: persona name, specialty, behavioural dimensions, objection patterns, communication style, and conversational intent. Raw structured JSON returned per page, then merged and de-duplicated.</p>` },
+  { emoji:'🧩', label:'Persona\nStructuring',
+    detail:`<h4>Persona Structuring & Validation</h4><p>Extracted fields are mapped to Simulate.AI's persona schema (8 required + 12 optional fields). A validation layer checks for missing critical fields and runs completeness scoring. Incomplete personas are flagged for admin review. Complete ones advance to the 7-step Admin Portal wizard as a pre-filled <code>DRAFT</code>.</p>` },
+  { emoji:'🛠️', label:'7-Step Admin\nWizard',
+    detail:`<h4>7-Step Admin Portal Wizard</h4><p>Admins review and complete the persona in a guided wizard: (1) Basic Info, (2) Persona Dimensions, (3) Conversational Style, (4) Evaluation Criteria, (5) Product Context, (6) Difficulty Settings, (7) Preview & QA. Each step validates independently. Data is auto-saved to <code>PostgreSQL</code> on every step as a versioned <code>DRAFT</code>.</p>` },
+  { emoji:'✅', label:'GPT-4o\nProfile QA',
+    detail:`<h4>GPT-4o — Automated Profile QA Testing</h4><p>Before publishing, GPT-4o runs 15 synthetic test conversations against the draft persona, checking: (a) persona stays in character, (b) objection responses match the configured style, (c) evaluation criteria are triggerable, (d) no off-label or hallucinated medical claims. Results shown to admin with a pass/fail + suggested fixes. This is MURAL's input data.</p>` },
+  { emoji:'🌍', label:'17-Language\nTranslation',
+    detail:`<h4>Automated Dynamic Translator — 17 Languages</h4><p>On publish, the Translation Pipeline triggers: long-form prompts, evaluation question arrays, and nested JSONB dicts are each routed through a 4-prompt chain: (1) field-type detection, (2) Translation Memory lookup (cached prior translations), (3) GPT-4.1 translation, (4) back-translation validation loop (up to 3 correction passes). Translated profiles are UPSERT'd to PostgreSQL. Localization time: <strong>2 weeks → same-day</strong>.</p>` },
+  { emoji:'🚀', label:'Live Simulation\nDeployment',
+    detail:`<h4>Live Simulation — Pharma Rep Practice</h4><p>The published persona is now available to assigned reps. In chat mode, the rep's messages hit a <code>FastAPI</code> endpoint, are enriched with the persona system prompt + conversation history, and fed to <code>GPT-4o</code>. Responses stream back via <code>SSE</code>. The evaluation engine scores each turn against the 7 configured criteria in real time. Session summaries are stored for manager review in Coach.AI.</p>` },
 ];
 
 const PROJECTS = [
-  { type:'PRODUCTION · AGENTIC', cats:['production','agentic','rag'], title:'Simulate.AI', badge:'PRODUCTION', badgeCls:'prod', stack:['FastAPI','GPT-4o/4.1','PostgreSQL','AWS S3','React/TS','Kubernetes'], desc:'Enterprise virtual pharma sales simulation platform. AI-powered HCP personas in chat + video. 7-step admin wizard (Draft/Published versioning), Automated Dynamic Translator (17 languages, Translation Memory), Profile Builder (GPT-4.1 Vision), and MURAL prompt optimizer.', metric:'400+ users · 3 global pharma clients · 17 languages' },
-  { type:'PRODUCTION · AGENTIC', cats:['production','agentic','rag'], title:'Coach.AI', badge:'PRODUCTION', badgeCls:'prod', stack:['LangChain','GPT-4o','Sentence Transformers','FastAPI','PostgreSQL','Kubernetes','SSE'], desc:'Enterprise sales coaching intelligence platform. Dual-agent pipeline: LLM tool-selection routes between CoachDB and VRT DB. SQL analytics agent + semantic search over conversation history. GPT-4o SSE streaming + FastMCP action items.', metric:'200+ managers · 45 min → <10 min coaching prep' },
-  { type:'PRODUCTION · AGENTIC', cats:['production','agentic'], title:'LiveCall.AI', badge:'PRODUCTION', badgeCls:'prod', stack:['FastAPI','GPT-4o','AWS Transcribe','FFmpeg','MySQL','SSE'], desc:'Real pharma sales call evaluation. AWS Transcribe (speaker diarization) → 7 parallel GPT-4o evaluations per call (Compliance, Key Messages, Objection Handling, Selling Behaviour, Sentiment) → weighted score report. Batch + SSE streaming.', metric:'500+ calls/month · 70% QA time reduction' },
-  { type:'AGENTIC · HACKATHON', cats:['agentic','hackathon','ml'], title:'PharmRebalance 🏆', badge:'1ST PLACE', badgeCls:'', stack:['LangChain','PuLP LP Solver','GPT-4o','Python'], desc:'4-agent pharma supply chain optimizer (Transfer Optimizer, Expiry Manager, Supply Adjuster, Simulation Engine). LP solver with cold chain, FEFO, MOQ, CO₂ constraints. Before/after counterfactual simulation.', metric:'5,398 patient-days loss prevented · ZS Hackathon 2025' },
-  { type:'RAG · NL-TO-SQL', cats:['rag','production'], title:'BritBot', badge:'DEPLOYED', badgeCls:'prod', stack:['Gemini Pro','LangChain','SQLite','Streamlit','AWS EC2'], desc:'Conversational-analytical chatbot enabling non-technical Britannia stakeholders to query internal trade data in plain English. 3-prompt chain: intent → NL-to-SQL (few-shot) → auto-visualization. Deployed on AWS EC2.', metric:'15+ users · 2-day → real-time turnaround · ~40% query reduction' },
-  { type:'ML · ANALYTICS', cats:['ml'], title:'Trade Ineffectiveness System', badge:'', badgeCls:'', stack:['TensorFlow','XGBoost','Python','SQL','Excel'], desc:'Automated monthly identification of ineffective trade reimbursements across 500+ promotional schemes. Ensemble DNN + XGBoost (82% accuracy). 3-condition ineffectiveness logic. Top-10 ASM rankings per month.', metric:'~₹2 Cr/month flagged · 12% spend reduction over 6 months' },
-  { type:'AGENTIC · RESEARCH', cats:['agentic','rag','hackathon'], title:'InsureClimate AI', badge:'', badgeCls:'', stack:['LangChain','Gemini 1.5','Tavily','ROUGE','fpdf2'], desc:'Agentic research assistant: Boolean query construction → parallel credibility scoring (ThreadPoolExecutor) → per-article LLM analysis → ROUGE + cosine similarity evaluation → PDF report export. Feedback-driven refinement loop.', metric:'87% avg ROUGE-L · Full report in <90s' },
-  { type:'AGENTIC · OPTIMIZATION', cats:['agentic','ml'], title:'MURAL — Prompt Optimizer', badge:'', badgeCls:'', stack:['GPT-4o','Python','sentence-transformers'], desc:'Prompt-level optimization engine inspired by GRPO. Evaluates 45 test queries, scores with reward = (0.85 × semantic_sim) − (0.15 × length_penalty), identifies failures, rewrites the system prompt, iterates. Baseline mean reward 0.80 → 0.94+.', metric:'80% → 94%+ classification accuracy · No model retraining' },
-  { type:'ML · COMPUTER VISION', cats:['ml'], title:'Pest Detection (YOLOv5)', badge:'', badgeCls:'', stack:['YOLOv5','Roboflow','OpenCV','Google Colab'], desc:'Custom YOLOv5 model detecting rice field pests (Yellow Rice Borer, Rice Gall Midge). 909 raw images → 2,090 after Roboflow augmentation → V7 Darwin annotation → fine-tuned from COCO weights. Instance segmentation + bounding boxes.', metric:'91.9% mAP · 96.7% Precision · BIT Mesra Final Year Project' },
-  { type:'ML · PHARMA SUPPLY CHAIN', cats:['agentic','ml','hackathon'], title:'PharmRebalance Deep Dive', badge:'', badgeCls:'', stack:['PuLP','LangChain','Python','Streamlit'], desc:'LP solver minimizing (transfer cost + unmet demand penalty weighted by therapeutic criticality) across 6 hard constraints: cold chain, FEFO, transport lanes, integer feasibility, MOQ, CO₂. Cancer/cardiac drugs carry 3× penalty weight.', metric:'11 datasets ingested · 4 agents · multi-constraint LP' },
-  { type:'DATA SCIENCE', cats:['ml'], title:'COVID-19 Analysis & Forecast', badge:'', badgeCls:'', stack:['Facebook Prophet','Pandas','Matplotlib','Tableau'], desc:'Time-series analysis and forecasting of global COVID-19 data (200+ countries, Feb 2020–Jul 2021). Prophet trend decomposition, 3-month forward forecasts, age-group demographic analysis. 3 case study tracks.', metric:'200+ countries · GitHub Pages deployment' },
-  { type:'IOT · EMBEDDED', cats:['ml'], title:'Smart Plant Monitoring System', badge:'', badgeCls:'', stack:['NodeMCU ESP8266','Arduino C++','Blynk','DHT11'], desc:'IoT-based smart irrigation system monitoring soil moisture, temperature, and humidity. Real-time Blynk cloud dashboard, push notifications on low moisture, remote relay control of solenoid water valve from anywhere globally.', metric:'<1s sensor refresh · Remote global control · BIT Mesra Minor Project' },
+  { type:'PRODUCTION · AGENTIC', cats:['production','agentic','rag'], accent:'violet', title:'Simulate.AI', badge:'PRODUCTION', bc:'prod',
+    stack:['FastAPI','GPT-4o/4.1','PostgreSQL','AWS S3','React/TS','Kubernetes'],
+    desc:'Enterprise virtual pharma sales simulation — 400+ reps, 3 global pharma clients. 7-step Admin Portal wizard, Automated Dynamic Translator (17 languages), Profile Builder (GPT-4.1 Vision), MURAL prompt optimizer (80%→94%).',
+    metric:'400+ users · 17 languages · 2 weeks → same-day localization' },
+  { type:'PRODUCTION · AGENTIC', cats:['production','agentic','rag'], accent:'teal', title:'Coach.AI', badge:'PRODUCTION', bc:'prod',
+    stack:['LangChain','GPT-4o','Sentence Transformers','FastAPI','PostgreSQL','SSE'],
+    desc:'Enterprise sales coaching platform. Dual-agent pipeline: LLM tool-selection → CoachDB / VRT DB routing + SQL analytics + semantic search. GPT-4o SSE streaming + FastMCP action items.',
+    metric:'200+ managers · coaching prep: 45 min → <10 min' },
+  { type:'PRODUCTION · AGENTIC', cats:['production','agentic'], accent:'emerald', title:'LiveCall.AI', badge:'PRODUCTION', bc:'prod',
+    stack:['FastAPI','GPT-4o','AWS Transcribe','FFmpeg','MySQL','SSE'],
+    desc:'Pharma sales call evaluation — AWS Transcribe (speaker diarization) + 7 parallel GPT-4o evaluations per call (Compliance, Key Messages, Objection Handling, Sentiment). Batch + SSE streaming.',
+    metric:'500+ calls/month · 70% QA time reduction' },
+  { type:'AGENTIC · HACKATHON 🏆', cats:['agentic','hackathon','ml'], accent:'coral', title:'PharmRebalance', badge:'1ST PLACE', bc:'hack',
+    stack:['LangChain','PuLP LP Solver','GPT-4o','Python','Streamlit'],
+    desc:'4-agent pharma supply chain optimizer: Transfer Optimizer (LP solver with cold chain, FEFO, CO₂ constraints), Expiry Manager, Supply Adjuster, Simulation Engine. Before/after counterfactual.',
+    metric:'5,398 patient-days loss prevented · ZS Hackathon 2025' },
+  { type:'RAG · NL-TO-SQL', cats:['rag','production'], accent:'teal', title:'BritBot', badge:'DEPLOYED', bc:'prod',
+    stack:['Gemini Pro','LangChain','SQLite','Streamlit','AWS EC2'],
+    desc:'NL-to-SQL chatbot enabling 15+ non-technical Britannia stakeholders to query trade data in plain English. 3-prompt chain: intent → SQL (few-shot) → auto-visualization. ConversationBufferMemory for multi-turn context.',
+    metric:'2-day → real-time · ~40% query reduction' },
+  { type:'ML · OPTIMIZATION', cats:['ml'], accent:'violet', title:'Trade Ineffectiveness System', badge:'', bc:'',
+    stack:['TensorFlow','XGBoost','Python','SQL','Excel'],
+    desc:'Automated detection of ineffective trade reimbursements across 500+ schemes. Ensemble DNN + XGBoost (82% accuracy). 3-condition ineffectiveness logic. Monthly top-10 ASM rankings.',
+    metric:'~₹2 Cr/month flagged · 12% spend reduction' },
+  { type:'AGENTIC · RESEARCH', cats:['agentic','rag','hackathon'], accent:'emerald', title:'InsureClimate AI', badge:'', bc:'',
+    stack:['LangChain','Gemini 1.5','Tavily','ROUGE','fpdf2'],
+    desc:'Agentic research assistant: Boolean query construction → parallel credibility scoring (ThreadPoolExecutor) → 4-dimension LLM analysis → ROUGE + cosine similarity evaluation → PDF report export.',
+    metric:'87% avg ROUGE-L · report in <90s' },
+  { type:'PROMPT OPTIMIZATION', cats:['agentic','ml'], accent:'violet', title:'MURAL — Prompt Optimizer', badge:'', bc:'',
+    stack:['GPT-4o','Python','sentence-transformers'],
+    desc:'Reward-guided prompt optimization inspired by GRPO. Reward = 0.85 × semantic_sim − 0.15 × length_penalty. 45 test queries per iteration, fails identified, system prompt rewritten, repeat.',
+    metric:'80% → 94%+ accuracy · no model retraining' },
+  { type:'ML · COMPUTER VISION', cats:['ml'], accent:'teal', title:'Pest Detection (YOLOv5)', badge:'', bc:'',
+    stack:['YOLOv5','Roboflow','OpenCV','Google Colab'],
+    desc:'Custom YOLOv5 model for rice field pest detection (Yellow Rice Borer, Rice Gall Midge). 909 raw → 2,090 augmented images, V7 Darwin annotation, CSPDarknet53 backbone, COCO fine-tune.',
+    metric:'91.9% mAP · 96.7% Precision · BIT Mesra FYP' },
+  { type:'ML · PHARMA', cats:['agentic','ml','hackathon'], accent:'coral', title:'PharmRebalance — LP Deep Dive', badge:'', bc:'',
+    stack:['PuLP','LangChain','Python','Streamlit'],
+    desc:'LP solver minimizing (transfer cost + unmet demand × criticality weight) with 6 hard constraints: cold chain, FEFO batch sorting, transport lanes, integer feasibility, MOQ, CO₂ cap. Cancer/cardiac drugs carry 3× penalty weight.',
+    metric:'11 datasets ingested · 4-agent consensus' },
+  { type:'DATA SCIENCE', cats:['ml'], accent:'emerald', title:'COVID-19 Analysis & Forecast', badge:'', bc:'',
+    stack:['Facebook Prophet','Pandas','Matplotlib','Tableau'],
+    desc:'Time-series analysis and forecasting across 200+ countries (Feb 2020–Jul 2021). Prophet trend decomposition, 3-month forecasts, age-group demographic analysis, Tableau interactive dashboard.',
+    metric:'200+ countries analysed · GitHub Pages deployed' },
+  { type:'IOT · EMBEDDED', cats:['ml'], accent:'amber', title:'Smart Plant Monitor', badge:'', bc:'',
+    stack:['NodeMCU ESP8266','Arduino C++','Blynk','DHT11'],
+    desc:'IoT smart irrigation: soil moisture + DHT11 sensor → Blynk cloud → push notifications + remote solenoid relay control from anywhere globally. Automatic mode below moisture threshold.',
+    metric:'<1s refresh · global remote control · BIT Mesra' },
 ];
 
-const PROFICIENCY = [
-  { label:'LLM Application Dev', pct:95 },
-  { label:'Agentic AI / LangChain', pct:92 },
-  { label:'RAG Pipelines', pct:90 },
-  { label:'Prompt Engineering', pct:93 },
-  { label:'FastAPI / Backend', pct:85 },
-  { label:'Python', pct:95 },
-  { label:'SQL & Databases', pct:88 },
-  { label:'AWS Cloud', pct:80 },
-  { label:'Deep Learning (TF/PT)', pct:82 },
-  { label:'ML / XGBoost', pct:84 },
+const PROF = [
+  {label:'LLM Application Dev',   pct:95, color:'var(--violet)'},
+  {label:'Agentic AI / LangChain',pct:92, color:'var(--violet)'},
+  {label:'Prompt Engineering',    pct:93, color:'var(--indigo)'},
+  {label:'RAG Pipelines',         pct:90, color:'var(--teal)'},
+  {label:'FastAPI / Backend',     pct:85, color:'var(--teal)'},
+  {label:'Python',                pct:95, color:'var(--emerald)'},
+  {label:'SQL & Databases',       pct:88, color:'var(--emerald)'},
+  {label:'AWS Cloud',             pct:80, color:'var(--amber)'},
+  {label:'Deep Learning (TF/PT)', pct:82, color:'var(--coral)'},
+  {label:'ML / XGBoost',          pct:84, color:'var(--coral)'},
 ];
 
-// ── Tech strip ──────────────────────────────────
-const strip = document.getElementById('strip');
-const pills = [...TECHS, ...TECHS].map(t => `<span class="tech-pill">${t}</span>`).join('');
-strip.innerHTML = pills;
+// ── Tech strip ──────────────────────────────────────────────
+const stripEl = document.getElementById('strip');
+stripEl.innerHTML = [...TECHS,...TECHS].map(t=>`<span class="t-pill">${t}</span>`).join('');
 
-// ── Typewriter ─────────────────────────────────
+// ── Typewriter ──────────────────────────────────────────────
 const phrases = [
   'RAG pipelines that actually retrieve relevantly.',
   'multi-agent systems that reason, route, and act.',
   'LLM backends used by 600+ professionals.',
-  'prompt optimizers inspired by GRPO.',
+  'prompt optimisers inspired by GRPO.',
   'NL-to-SQL tools non-engineers love.',
 ];
-let pIdx = 0, cIdx = 0, deleting = false;
-const twEl = document.getElementById('typewriter');
-function typewrite() {
-  const phrase = phrases[pIdx];
-  if (!deleting) {
-    twEl.textContent = phrase.slice(0, ++cIdx);
-    if (cIdx === phrase.length) { deleting = true; setTimeout(typewrite, 1800); return; }
-  } else {
-    twEl.textContent = phrase.slice(0, --cIdx);
-    if (cIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; }
-  }
-  setTimeout(typewrite, deleting ? 38 : 58);
+let pi=0,ci=0,del=false;
+const twEl=document.getElementById('tw');
+function tw(){
+  const p=phrases[pi];
+  if(!del){twEl.textContent=p.slice(0,++ci);if(ci===p.length){del=true;setTimeout(tw,1900);return;}}
+  else{twEl.textContent=p.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
+  setTimeout(tw,del?38:60);
 }
-typewrite();
+tw();
 
-// ── Counters ────────────────────────────────────
-function animateCounter(el) {
-  const target = +el.dataset.target;
-  const suffix = el.dataset.suffix || '';
-  let current = 0;
-  const step = Math.ceil(target / 60);
-  const t = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = current + suffix;
-    if (current >= target) clearInterval(t);
-  }, 28);
+// ── Counters ────────────────────────────────────────────────
+function animCtr(el){
+  const t=+el.dataset.t, s=el.dataset.s||'';
+  let c=0; const step=Math.ceil(t/60);
+  const id=setInterval(()=>{c=Math.min(c+step,t);el.textContent=c+s;if(c>=t)clearInterval(id);},26);
 }
 
-// ── Pipeline ────────────────────────────────────
-const nodesContainer = document.getElementById('pipelineNodes');
-PIPELINE_NODES.forEach((n, i) => {
-  const div = document.createElement('div');
-  div.className = 'p-node';
-  div.innerHTML = `<div class="p-node-circle">${n.emoji}</div><div class="p-node-label">${n.label}</div>`;
-  div.onclick = () => showNodeDetail(i);
-  nodesContainer.appendChild(div);
-  if (i < PIPELINE_NODES.length - 1) {
-    const arr = document.createElement('div');
-    arr.className = 'p-arrow';
-    arr.id = `arrow-${i}`;
-    nodesContainer.appendChild(arr);
+// ── Pipeline ────────────────────────────────────────────────
+const pNodes=document.getElementById('pNodes');
+PIPELINE.forEach((n,i)=>{
+  const d=document.createElement('div');
+  d.className='p-node';
+  d.innerHTML=`<div class="p-node-circle">${n.emoji}</div><div class="p-node-label">${n.label.replace('\n','<br>')}</div>`;
+  d.onclick=()=>showNode(i);
+  pNodes.appendChild(d);
+  if(i<PIPELINE.length-1){
+    const a=document.createElement('div');
+    a.className='p-arrow'; a.id=`arr${i}`;
+    pNodes.appendChild(a);
   }
 });
 
-function showNodeDetail(idx) {
-  document.querySelectorAll('.p-node').forEach((n,i) => n.classList.toggle('active', i===idx));
-  document.getElementById('pipelineDetail').innerHTML = PIPELINE_NODES[idx].detail;
+function showNode(i){
+  document.querySelectorAll('.p-node').forEach((n,j)=>n.classList.toggle('active',j===i));
+  document.getElementById('pDetail').innerHTML=PIPELINE[i].detail;
 }
+showNode(0);
 
-let running = false;
-function runPipeline() {
-  if (running) return;
-  running = true;
-  const btn = document.getElementById('runBtn');
-  const timer = document.getElementById('pipelineTimer');
-  const flowBar = document.getElementById('flowBar');
-  btn.textContent = '⏳ Running...';
-  btn.disabled = true;
-  document.querySelectorAll('.p-node').forEach(n => n.classList.remove('active'));
-  document.querySelectorAll('.p-arrow').forEach(a => a.classList.remove('active'));
-  flowBar.style.width = '0';
-  let step = 0;
-  const start = Date.now();
-  const interval = setInterval(() => {
-    if (step < PIPELINE_NODES.length) {
-      showNodeDetail(step);
-      if (step > 0) document.getElementById(`arrow-${step-1}`)?.classList.add('active');
-      flowBar.style.width = `${Math.round((step+1)/PIPELINE_NODES.length*100)}%`;
-      timer.textContent = `${((Date.now()-start)/1000).toFixed(2)}s`;
+let running=false;
+function runPipeline(){
+  if(running)return;
+  running=true;
+  const btn=document.getElementById('runBtn');
+  const timer=document.getElementById('pTimer');
+  const fill=document.getElementById('flowFill');
+  btn.disabled=true; btn.textContent='⏳ Running...';
+  document.querySelectorAll('.p-node').forEach(n=>n.classList.remove('active'));
+  document.querySelectorAll('.p-arrow').forEach(a=>a.classList.remove('active'));
+  fill.style.width='0';
+  let step=0; const start=Date.now();
+  const id=setInterval(()=>{
+    if(step<PIPELINE.length){
+      showNode(step);
+      if(step>0)document.getElementById(`arr${step-1}`)?.classList.add('active');
+      fill.style.width=`${Math.round((step+1)/PIPELINE.length*100)}%`;
+      timer.textContent=`${((Date.now()-start)/1000).toFixed(2)}s`;
       step++;
     } else {
-      clearInterval(interval);
-      timer.textContent = `✓ ${((Date.now()-start)/1000).toFixed(2)}s`;
-      btn.textContent = '▶ Run again';
-      btn.disabled = false;
-      running = false;
+      clearInterval(id);
+      timer.textContent=`✓ ${((Date.now()-start)/1000).toFixed(2)}s`;
+      btn.textContent='▶ Run again'; btn.disabled=false; running=false;
     }
-  }, 700);
+  },680);
 }
-showNodeDetail(0);
 
-// ── Projects ────────────────────────────────────
-const grid = document.getElementById('projectsGrid');
-PROJECTS.forEach(p => {
-  const el = document.createElement('div');
-  el.className = 'proj-card';
-  el.dataset.cats = p.cats.join(',');
-  el.innerHTML = `
+// ── Projects ────────────────────────────────────────────────
+const grid=document.getElementById('pgrid');
+PROJECTS.forEach(p=>{
+  const el=document.createElement('div');
+  el.className='proj-card'; el.dataset.cats=p.cats.join(','); el.dataset.accent=p.accent||'violet';
+  el.innerHTML=`
     <div class="proj-type">${p.type}</div>
-    <div class="proj-title">${p.title}${p.badge ? ` <span class="proj-badge ${p.badgeCls}">${p.badge}</span>` : ''}</div>
+    <div class="proj-title">${p.title}${p.badge?` <span class="proj-badge ${p.bc}">${p.badge}</span>`:''}</div>
     <div class="proj-desc">${p.desc}</div>
     <div class="proj-stack">${p.stack.map(t=>`<span class="proj-tech">${t}</span>`).join('')}</div>
-    ${p.metric ? `<div class="proj-metric">📊 ${p.metric}</div>` : ''}
+    ${p.metric?`<div class="proj-metric">📊 ${p.metric}</div>`:''}
   `;
   grid.appendChild(el);
 });
 
-function filterProjects(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+function filter(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(c => {
-    const cats = c.dataset.cats.split(',');
-    c.classList.toggle('hidden', cat !== 'all' && !cats.includes(cat));
+  document.querySelectorAll('.proj-card').forEach(c=>{
+    c.classList.toggle('hidden', cat!=='all' && !c.dataset.cats.split(',').includes(cat));
   });
 }
 
-// ── Terminal proficiency ─────────────────────────
-const tb = document.getElementById('terminalBody');
-PROFICIENCY.forEach(s => {
-  const row = document.createElement('div');
-  row.className = 't-bar-row';
-  row.innerHTML = `<span class="t-bar-label">${s.label}</span><div class="t-bar-track"><div class="t-bar-fill" data-pct="${s.pct}"></div></div><span class="t-pct">${s.pct}%</span>`;
-  tb.appendChild(row);
+// ── Proficiency bars ────────────────────────────────────────
+const profEl=document.getElementById('profBars');
+PROF.forEach(p=>{
+  const row=document.createElement('div');
+  row.className='prof-row';
+  row.innerHTML=`<span class="prof-label">${p.label}</span><div class="prof-track"><div class="prof-fill" data-pct="${p.pct}" style="background:${p.color}"></div></div><span class="prof-pct">${p.pct}%</span>`;
+  profEl.appendChild(row);
 });
 
-// ── Scroll reveal + intersection observer ────────
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      // counters
-      e.target.querySelectorAll('.counter').forEach(animateCounter);
-      // terminal bars
-      e.target.querySelectorAll('.t-bar-fill').forEach(b => {
-        setTimeout(() => b.style.width = b.dataset.pct + '%', 200);
-      });
-      io.unobserve(e.target);
-    }
+// ── Intersection Observer (reveal + counters + bars) ────────
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('visible');
+    e.target.querySelectorAll('.ctr').forEach(animCtr);
+    e.target.querySelectorAll('.prof-fill').forEach(b=>setTimeout(()=>b.style.width=b.dataset.pct+'%',200));
+    io.unobserve(e.target);
   });
-}, { threshold: 0.12 });
+},{threshold:.12});
 
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// also observe hero for counters
-const heroSection = document.getElementById('hero');
-const heroObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.counter').forEach(animateCounter);
-      heroObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-heroObs.observe(heroSection);
+// hero counters on load
+const heroObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.ctr').forEach(animCtr);heroObs.unobserve(e.target);}});
+},{threshold:.3});
+heroObs.observe(document.getElementById('hero'));
 
-// terminal bars initial trigger
-const termObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.t-bar-fill').forEach(b => {
-        setTimeout(() => b.style.width = b.dataset.pct + '%', 300);
-      });
-      termObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.2 });
-const term = document.querySelector('.terminal');
-if (term) termObs.observe(term);
+// proficiency bars trigger
+const profObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.prof-fill').forEach(b=>setTimeout(()=>b.style.width=b.dataset.pct+'%',200));profObs.unobserve(e.target);}});
+},{threshold:.2});
+const profSection=document.querySelector('.prof-section');
+if(profSection)profObs.observe(profSection);
 
-// ── Active nav highlight ─────────────────────────
-const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
-  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+current));
+// ── Active nav ──────────────────────────────────────────────
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  document.querySelectorAll('section[id],div[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
 });
 
-// ── Mobile menu ──────────────────────────────────
-function toggleMobileMenu() {
-  const links = document.querySelector('.nav-links');
-  const cta = document.querySelector('.nav-cta');
-  if (links.style.display === 'flex') {
-    links.style.display = '';
-    cta.style.display = '';
-  } else {
-    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:var(--navy2);padding:20px;gap:20px;border-bottom:1px solid #ffffff10;';
-    cta.style.cssText = 'display:block;position:fixed;top:210px;left:20px;';
-  }
+// ── Mobile ──────────────────────────────────────────────────
+function toggleMenu(){
+  const links=document.querySelector('.nav-links');
+  const cta=document.querySelector('.nav-cta');
+  const open=links.style.display==='flex';
+  links.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:#fffffff0;backdrop-filter:blur(12px);padding:20px;gap:18px;border-bottom:1px solid var(--border);';
+  cta.style.display=open?'':'none';
 }
 </script>
 </body>
